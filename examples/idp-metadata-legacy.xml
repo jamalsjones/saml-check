@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" entityID="https://idp.legacy.example.com" validUntil="2025-06-30T00:00:00Z">
+  <md:IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+    <md:KeyDescriptor use="signing">
+      <ds:KeyInfo><ds:X509Data><ds:X509Certificate>MIIB/TCCAWagAwIBAgIUA8EoeJL5gWoAT91lNVZ4YYm/KukwDQYJKoZIhvcNAQEFBQAwITEfMB0GA1UEAwwWaWRwLmxlZ2FjeS5leGFtcGxlLmNvbTAeFw0yMzAxMDEwMDAwMDBaFw0yNTAxMDEwMDAwMDBaMCExHzAdBgNVBAMMFmlkcC5sZWdhY3kuZXhhbXBsZS5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAN+15SGkgL6KtsJx5A53oIYkQaOVyq4HgSJJDTdOuofpMM6iBlBZaEbNJ/hu4dzqiaBFLWRin3L0CmiX5NiQxUGW3NYA5xdoJDIiHnJNG7+xLqCLWGW/3gNCf1ub67XS4IitJqGnZgCEYz38CVzc8N6sSnixn1+5DNF5ZioEv4T5AgMBAAGjMjAwMB0GA1UdDgQWBBReS+tpGsMnR1iynnXb2XZ6agDTMjAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBANCXv9G8Lr5+FkB9jmqD2oC9PMIwMZQlQau8wTGavlSE35JzGMoGmHqB85YFL1JSMpixLDAKN6l5TUnt47wXLb+vKqkyWf0QoFrfocyAUEQUgySpw/TabAn3h033g4xBAn9Gtd4Ol0LR4CrKS3qVR1G0K/TmqjV/Daq4NoUB+GoY</ds:X509Certificate></ds:X509Data></ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://idp.legacy.example.com/saml/logout"/>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat>
+    <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp.legacy.example.com/saml/sso"/>
+    <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp.legacy.example.com/saml/sso"/>
+  </md:IDPSSODescriptor>
+</md:EntityDescriptor>

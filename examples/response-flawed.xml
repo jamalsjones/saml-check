@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<samlp:Response xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" ID="_r20b7e4c9" Version="2.0" IssueInstant="2026-11-20T15:00:00Z">
+  <saml:Issuer>https://idp.legacy.example.com</saml:Issuer>
+  <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+    <ds:SignedInfo>
+      <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+      <ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+      <ds:Reference URI="#_r20b7e4c9">
+        <ds:Transforms>
+          <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+          <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+        </ds:Transforms>
+        <ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+        <ds:DigestValue>U2FtcGxlRGlnZXN0Tm90UmVhbA==</ds:DigestValue>
+      </ds:Reference>
+    </ds:SignedInfo>
+    <ds:SignatureValue>U2FtcGxlU2lnbmF0dXJlTm90UmVhbA==</ds:SignatureValue>
+    <ds:KeyInfo><ds:X509Data><ds:X509Certificate>MIIB/TCCAWagAwIBAgIUA8EoeJL5gWoAT91lNVZ4YYm/KukwDQYJKoZIhvcNAQEFBQAwITEfMB0GA1UEAwwWaWRwLmxlZ2FjeS5leGFtcGxlLmNvbTAeFw0yMzAxMDEwMDAwMDBaFw0yNTAxMDEwMDAwMDBaMCExHzAdBgNVBAMMFmlkcC5sZWdhY3kuZXhhbXBsZS5jb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAN+15SGkgL6KtsJx5A53oIYkQaOVyq4HgSJJDTdOuofpMM6iBlBZaEbNJ/hu4dzqiaBFLWRin3L0CmiX5NiQxUGW3NYA5xdoJDIiHnJNG7+xLqCLWGW/3gNCf1ub67XS4IitJqGnZgCEYz38CVzc8N6sSnixn1+5DNF5ZioEv4T5AgMBAAGjMjAwMB0GA1UdDgQWBBReS+tpGsMnR1iynnXb2XZ6agDTMjAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3DQEBBQUAA4GBANCXv9G8Lr5+FkB9jmqD2oC9PMIwMZQlQau8wTGavlSE35JzGMoGmHqB85YFL1JSMpixLDAKN6l5TUnt47wXLb+vKqkyWf0QoFrfocyAUEQUgySpw/TabAn3h033g4xBAn9Gtd4Ol0LR4CrKS3qVR1G0K/TmqjV/Daq4NoUB+GoY</ds:X509Certificate></ds:X509Data></ds:KeyInfo>
+  </ds:Signature>
+  <samlp:Status><samlp:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success"/></samlp:Status>
+  <saml:Assertion ID="_a5c0e2f7" Version="2.0" IssueInstant="2026-11-20T15:00:00Z">
+    <saml:Issuer>https://idp.legacy.example.com</saml:Issuer>
+    <saml:Subject>
+      <saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress">admin@northpeak.example<!---->.attacker.example</saml:NameID>
+      <saml:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
+        <saml:SubjectConfirmationData NotOnOrAfter="2026-11-21T15:00:00Z" Recipient="https://payroll.example.com/saml/consume"/>
+      </saml:SubjectConfirmation>
+    </saml:Subject>
+    <saml:Conditions NotBefore="2026-11-20T15:00:00Z" NotOnOrAfter="2026-11-21T15:00:00Z">
+      <saml:AudienceRestriction><saml:Audience>https://payroll.example.com</saml:Audience></saml:AudienceRestriction>
+    </saml:Conditions>
+    <saml:AuthnStatement AuthnInstant="2026-11-20T14:59:58Z">
+      <saml:AuthnContext><saml:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport</saml:AuthnContextClassRef></saml:AuthnContext>
+    </saml:AuthnStatement>
+  </saml:Assertion>
+</samlp:Response>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" entityID="https://payroll.example.com/saml" cacheDuration="PT24H">
+  <md:SPSSODescriptor AuthnRequestsSigned="true" WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+    <md:KeyDescriptor use="signing">
+      <ds:KeyInfo><ds:X509Data><ds:X509Certificate>MIIBaDCCAQ6gAwIBAgIUJv5Sr2jcqM0M+EGkuLt91RPc0DswCgYIKoZIzj0EAwIwGjEYMBYGA1UEAwwPYXBwLmV4YW1wbGUuY29tMB4XDTI2MDEwMTAwMDAwMFoXDTM2MDEwMTAwMDAwMFowGjEYMBYGA1UEAwwPYXBwLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEwhYabwzVyRYymkh1Md/F/NcaR0pdvwS6Z8EtWBO2EYOSiJS43snF7wTRoyBDQdKPNLwksvC/qp89ZD0AyU5bKqMyMDAwHQYDVR0OBBYEFNiEItPqKYy0IPWi2OR9E5uJQ4EvMA8GA1UdEwEB/wQFMAMBAf8wCgYIKoZIzj0EAwIDSAAwRQIhAKxOSjI6BuVr8BBs3v7f6pzW3WfKfoi8EIZ+y/JP33udAiAu14OxeqWhhrMmVUysRJQpF5kOtA9C+BgIN/Q7YWtyog==</ds:X509Certificate></ds:X509Data></ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:KeyDescriptor use="encryption">
+      <ds:KeyInfo><ds:X509Data><ds:X509Certificate>MIIC+DCCAeCgAwIBAgIUKv3bU8rSB17Tu6Mqm2luQB64A4cwDQYJKoZIhvcNAQELBQAwHDEaMBgGA1UEAwwRbG9naW4uZXhhbXBsZS5jb20wHhcNMjYwMTAxMDAwMDAwWhcNMzYwMTAxMDAwMDAwWjAcMRowGAYDVQQDDBFsb2dpbi5leGFtcGxlLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALskX+kccxqY1L61e3LRELOxMKkIUIFzlN2nNFR69lYn5PSMc3FOmMsRrG5Svf4NoXQG2TtoSj7XMgufOVqRZEo6TWoGg2r5snx1jMyI8FlaPuYDpslG1tgPaXvHizktG/uqlEruKhHSgw5WU1WYkRUt9GBFBr7zdEvyhqGwayo6b9VWcKSDqsKsAj8Of+tkjVRSoJAHzLdDFeL+xY7m+4O8V12AhYQKlgYnulYPQTF7Bvvw/lOXn0BWUf7vh9+X0vc4KxXvwu9o8Gt20w8Mef8J2HS9pmXzqPjHB71Ndp7nFhjW6NxbEz1AdD43yH9nwZlyWUAjuC3Au3RMjY7hdCsCAwEAAaMyMDAwHQYDVR0OBBYEFJzRRaft+tktF2tEXF5agbuhbu3sMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAGYHw1HXluGKf+aL63O7YUe+fWwIwjNATVSQpJk2adUWCbq/JglWivg9COJEs4wf9ieOcQWpDqvA9+UxMj8bB1PF2Hwe2CX3QUkTSn/DxxARlliKIUCwrO9A50YBlq7Rwi/TSjnY97W+RBGe1bbs0WYg4tsnaUCi+zbpvNSpiK3zXrUmR0ngQOYEnLRu3zJLZM9kMbJTADscGetI6LMrQmt+26NtGLqSJYoc6s6P/Ugv6IlyMc4vvAUB9hsG1TnFADlX/mDCSfOb54v1bdLGIEEX8cwReh0nZK2K6uta53PzX3OjkeRHBRLAsw23t6BXw7qtCLUDOBAIA0ULhwzHjuU=</ds:X509Certificate></ds:X509Data></ds:KeyInfo>
+      <md:EncryptionMethod Algorithm="http://www.w3.org/2009/xmlenc11#rsa-oaep"/>
+    </md:KeyDescriptor>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</md:NameIDFormat>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://payroll.example.com/saml/acs" index="0" isDefault="true"/>
+  </md:SPSSODescriptor>
+</md:EntityDescriptor>

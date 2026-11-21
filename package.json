@@ -1,0 +1,13 @@
+{
+  "name": "saml-check",
+  "version": "1.0.0",
+  "description": "Review a SAML 2.0 response, assertion, AuthnRequest or metadata for the problems that break or weaken SSO. Browser page and command-line tool, no dependencies.",
+  "license": "MIT",
+  "author": "Jamal Jones (https://www.jamalsjones.com)",
+  "main": "saml-check.js",
+  "bin": { "saml-check": "saml-check.js" },
+  "scripts": { "test": "node --test" },
+  "engines": { "node": ">=18" },
+  "repository": { "type": "git", "url": "https://github.com/jamalsjones/saml-check" },
+  "keywords": ["saml", "saml2", "sso", "xml-signature", "iam", "security", "metadata"]
+}

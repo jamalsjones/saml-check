@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SAML Check</title>
+    <meta name="description" content="Review a SAML response, assertion, AuthnRequest or metadata for the problems that break or weaken SSO. Runs in your browser; nothing is uploaded." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="top">
+        <h1 class="wordmark">saml check</h1>
+        <p class="label">Responses · Requests · Metadata</p>
+      </header>
+      <p class="lede">Paste a SAML response, assertion, AuthnRequest or metadata and see why a sign-in failed or what an identity provider is getting wrong. It's checked in this page; nothing is uploaded.</p>
+
+      <div class="grid two">
+        <section class="panel">
+          <p class="label">SAML message or metadata</p>
+          <textarea id="input" spellcheck="false" autocomplete="off" placeholder="XML, base64 from a SAMLResponse field, or a URL with SAMLRequest=..."></textarea>
+          <div class="fields">
+            <div class="field"><label for="sp">Your SP entity ID</label><input id="sp" type="text" placeholder="https://app.example.com/saml" /></div>
+            <div class="field"><label for="acs">Your ACS URL</label><input id="acs" type="text" placeholder="https://app.example.com/saml/acs" /></div>
+            <div class="field"><label for="idp">Trusted IdP entity ID</label><input id="idp" type="text" placeholder="https://login.example.com" /></div>
+          </div>
+          <div class="row">
+            <button class="pill dark" id="check">Check</button>
+          </div>
+          <div class="row">
+            <button class="pill outline" data-sample="response-flawed.xml">Flawed response</button>
+            <button class="pill outline" data-sample="response-good.xml">Clean response</button>
+            <button class="pill outline" data-sample="idp-metadata-legacy.xml">Old IdP metadata</button>
+            <button class="pill outline" data-sample="sp-metadata.xml">SP metadata</button>
+          </div>
+          <p class="note">Get a response from your browser's developer tools (the <code>SAMLResponse</code> field posted to your app) or a SAML tracer extension. Signatures aren't verified and encrypted assertions aren't decrypted; that needs keys and is your service provider's job.</p>
+        </section>
+
+        <section class="panel" id="results" aria-live="polite">
+          <p class="label">Findings</p>
+          <p class="empty">Paste something, or try a sample.</p>
+        </section>
+      </div>
+
+      <section class="panel" style="margin-top:16px">
+        <p class="label">In a pipeline</p>
+        <p style="margin:0 0 10px">The same file is a command-line tool. Run it on a schedule against your identity provider's metadata URL to catch an expiring signing certificate before it takes SSO down. It exits 1 on errors.</p>
+        <pre class="json">node saml-check.js https://login.example.com/saml/metadata --cert-days 45</pre>
+      </section>
+
+      <footer>
+        <span>By <a href="https://www.jamalsjones.com">Jamal Jones</a></span>
+        <a href="https://github.com/jamalsjones/saml-check">Source on GitHub</a>
+        <a href="https://jamalsjones.github.io/jwt-lint/">JWT lint</a>
+        <a href="https://jamalsjones.github.io/oidc-config-check/">OIDC config check</a>
+        <a href="https://jamalsjones.github.io/leaver-check/">Leaver check</a>
+      </footer>
+    </main>
+    <script src="saml-check.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
