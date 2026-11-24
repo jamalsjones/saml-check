@@ -1,5 +1,7 @@
 # SAML check
 
+[![Tests](https://github.com/jamalsjones/saml-check/actions/workflows/test.yml/badge.svg)](https://github.com/jamalsjones/saml-check/actions/workflows/test.yml)
+
 Paste a SAML response, assertion, AuthnRequest or metadata and see why a sign-in failed or what an identity provider is getting wrong. Every finding cites the section of the SAML 2.0 specifications (Core, Profiles, Bindings, Metadata, Security Considerations) or the RFC it comes from.
 
 **Use it in the browser:** [jamalsjones.github.io/saml-check](https://jamalsjones.github.io/saml-check/). It's checked in the page; nothing is uploaded.
